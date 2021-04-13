@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplashFragment">
+
+    <action
+        android:id="@+id/actionMainFragment"
+        app:destination="@id/MainFragment"
+        app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+        android:id="@+id/actionDialog"
+        app:destination="@id/DialogFragment"/>
+    <action
+        android:id="@+id/actionTwoButtonDialog"
+        app:destination="@id/TwoButtonDialog"/>
+    <action
+        android:id="@+id/actionSnsSignInFragment"
+        app:destination="@id/SnsSignInFragment"/>
+    <action
+        android:id="@+id/actionRootSnsSignInFragment"
+        app:destination="@id/SnsSignInFragment"
+        app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="kr.snclab.haveeat.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/actionSnsSignInFragment"
+            app:destination="@id/SnsSignInFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/actionAddInfoFragment"
+            app:destination="@id/AddInfoFragment"
+            app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/SnsSignInFragment"
+        android:name="kr.snclab.haveeat.ui.sns.SnsSignInFragment"
+        android:label="SnsSignInFragment"
+        tools:layout="@layout/fragment_sns_signin">
+        <action
+            android:id="@+id/actionLoginFragment"
+            app:destination="@id/SigninFragment" />
+        <action
+            android:id="@+id/actionSignupFragment"
+            app:destination="@id/SignupFragment" />
+        <action
+            android:id="@+id/actionAddInfoFragment"
+            app:destination="@id/AddInfoFragment"
+            app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/actionSnsTermFragment"
+            app:destination="@id/SnsTermFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/SnsTermFragment"
+        android:name="kr.snclab.haveeat.ui.sns.SnsTermFragment"
+        android:label="SnsTermFragment"
+        tools:layout="@layout/fragment_sns_term">
+
+        <argument
+            android:name="type"
+            app:argType="kr.snclab.haveeat.model.SigninProvider"/>
+        <action
+            android:id="@+id/actionAddInfoFragment"
+            app:destination="@id/AddInfoFragment"
+            app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/actionTerms1Fragment"
+            app:destination="@id/Terms1Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/actionTerms2Fragment"
+            app:destination="@id/Terms2Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/SigninFragment"
+        android:name="kr.snclab.haveeat.ui.signin.SigninFragment"
+        android:label="SigninFragment"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/actionAddInfoFragment"
+            app:destination="@id/AddInfoFragment"
+            app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/actionPasswordFindFragment"
+            app:destination="@id/PasswordFindFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PasswordFindFragment"
+        android:name="kr.snclab.haveeat.ui.signin.PasswordFindFragment"
+        android:label="PasswordFindFragment"
+        tools:layout="@layout/fragment_password_find">
+        <action
+            android:id="@+id/actionPasswordFindResultFragment"
+            app:destination="@id/PasswordFindResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PasswordFindResultFragment"
+        android:name="kr.snclab.haveeat.ui.signin.PasswordFindResultFragment"
+        android:label="PasswordFindResultFragment"
+        tools:layout="@layout/fragment_password_find_result">
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignupFragment"
+        android:name="kr.snclab.haveeat.ui.signup.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/actionAddInfoFragment"
+            app:destination="@id/AddInfoFragment"
+            app:popUpTo="@+id/SignupFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionTerms1Fragment"
+            app:destination="@id/Terms1Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/actionTerms2Fragment"
+            app:destination="@id/Terms2Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/Terms1Fragment"
+        android:name="kr.snclab.haveeat.ui.signup.Terms1Fragment"
+        android:label="Terms1Fragment"
+        tools:layout="@layout/fragment_terms1">
+    </fragment>
+    <fragment
+        android:id="@+id/Terms2Fragment"
+        android:name="kr.snclab.haveeat.ui.signup.Terms2Fragment"
+        android:label="Terms2Fragment"
+        tools:layout="@layout/fragment_terms2">
+    </fragment>
+    <fragment
+        android:id="@+id/AddInfoFragment"
+        android:name="kr.snclab.haveeat.ui.addInfo.AddInfoFragment"
+        android:label="AddInfoFragment"
+        tools:layout="@layout/fragment_addinfo">
+    </fragment>
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="kr.snclab.haveeat.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/actionHistoryDetailFragment"
+            app:destination="@id/HistoryDetailFragment" />
+        <action
+            android:id="@+id/actionFoodInfoDetailFragment"
+            app:destination="@id/FoodInfoDetailFragment" />
+        <action
+            android:id="@+id/actionWriteDietsFragment"
+            app:destination="@+id/WriteDietsFragment" />
+        <action
+            android:id="@+id/actionUserStateFragment"
+            app:destination="@+id/UserStateFragment" />
+        <action
+            android:id="@+id/actionTerms1Fragment"
+            app:destination="@+id/Terms1Fragment" />
+        <action
+            android:id="@+id/actionTerms2Fragment"
+            app:destination="@+id/Terms2Fragment" />
+        <action
+            android:id="@+id/actionUserInfoFragment"
+            app:destination="@+id/UserInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="kr.snclab.haveeat.ui.main.history.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history">
+    </fragment>
+    <fragment
+        android:id="@+id/HistoryDetailFragment"
+        android:name="kr.snclab.haveeat.ui.main.history.HistoryDetailFragment"
+        android:label="HistoryDetailFragment"
+        tools:layout="@layout/fragment_history_detail">
+        <argument
+            android:name="diets"
+            app:argType="kr.snclab.haveeat.model.Diets"/>
+
+        <action
+            android:id="@+id/actionTimeFragment"
+            app:destination="@id/TimeDialog" />
+        <action
+            android:id="@+id/actionIntakeFragment"
+            app:destination="@id/IntakeFragment" />
+        <action
+            android:id="@+id/actionFoodInfoDetailFragment"
+            app:destination="@id/FoodInfoDetailFragment" />
+        <action
+            android:id="@+id/actionFoodAddFragment"
+            app:destination="@id/FoodAddFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/IntakeFragment"
+        android:name="kr.snclab.haveeat.ui.intake.IntakeFragment"
+        android:label="IntakeFragment"
+        tools:layout="@layout/fragment_intake">
+        <argument
+            android:name="position"
+            app:argType="integer"/>
+        <argument
+            android:name="food"
+            app:argType="kr.snclab.haveeat.model.Food"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/FoodInfoDetailFragment"
+        android:name="kr.snclab.haveeat.ui.food.FoodInfoDetailFragment"
+        android:label="FoodInfoDetailFragment"
+        tools:layout="@layout/fragment_foodinfo_detail">
+        <argument
+            android:name="foodId"
+            app:argType="string"/>
+    </fragment>
+    <dialog
+        android:id="@+id/CalendarDialog"
+        android:name="kr.snclab.haveeat.ui.dialog.CalendarDialog"
+        android:label="CalendarDialog"
+        tools:layout="@layout/dialog_calendar">
+        <argument
+            android:name="time"
+            app:argType="long"/>
+    </dialog>
+    <action
+        android:id="@+id/actionCalendarFragment"
+        app:destination="@id/CalendarDialog" />
+    <dialog
+        android:id="@+id/TimeDialog"
+        android:name="kr.snclab.haveeat.ui.dialog.TimeDialog"
+        android:label="TimeDialog"
+        tools:layout="@layout/dialog_time">
+        <argument
+            android:name="time"
+            app:argType="long"/>
+    </dialog>
+    <dialog
+        android:id="@+id/DialogFragment"
+        android:name="kr.snclab.haveeat.ui.dialog.Dialog"
+        android:label="Dialog"
+        tools:layout="@layout/dialog_one_button">
+        <argument
+            android:name="titleResId"
+            app:argType="integer"/>
+        <argument
+            android:name="messageResId"
+            app:argType="integer"/>
+    </dialog>
+    <dialog
+        android:id="@+id/WriteDietsFragment"
+        android:name="kr.snclab.haveeat.ui.dialog.WriteDietsDialog"
+        android:label="WriteDietsFragment"
+        tools:layout="@layout/dialog_write_diets">
+
+        <argument
+            android:name="diets"
+            app:argType="kr.snclab.haveeat.model.Diets"/>
+        <action
+            android:id="@+id/actionHistoryDetailFragment"
+            app:destination="@id/HistoryDetailFragment" />
+        <action
+            android:id="@+id/actionCameraFragment"
+            app:destination="@id/CameraFragment" />
+        <action
+            android:id="@+id/actionGalleryFragment"
+            app:destination="@id/GalleryFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/TwoButtonDialog"
+        android:name="kr.snclab.haveeat.ui.dialog.TwoButtonDialog"
+        android:label="TwoButtonDialog"
+        tools:layout="@layout/dialog_two_button">
+        <argument
+            android:name="titleResId"
+            app:argType="integer"/>
+        <argument
+            android:name="messageResId"
+            app:argType="integer"/>
+        <argument
+            android:name="positiveTextResId"
+            app:argType="integer"/>
+    </dialog>
+    <fragment
+        android:id="@+id/FoodAddFragment"
+        android:name="kr.snclab.haveeat.ui.food.FoodInfoFragment"
+        android:label="FoodInfoFragment"
+        tools:layout="@layout/fragment_foodinfo">
+        <argument
+            android:name="writeMode"
+            app:argType="boolean"
+            android:defaultValue="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/UserInfoFragment"
+        android:name="kr.snclab.haveeat.ui.setting.UserInfoFragment"
+        android:label="UserInfoFragment"
+        tools:layout="@layout/fragment_user_info"/>
+    <fragment
+        android:id="@+id/UserStateFragment"
+        android:name="kr.snclab.haveeat.ui.setting.UserStateFragment"
+        android:label="UserStateFragment"
+        tools:layout="@layout/fragment_user_state"/>
+    <fragment
+        android:id="@+id/CameraFragment"
+        android:name="kr.snclab.haveeat.ui.camera.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/fragment_camera">
+        <argument
+            android:name="diets"
+            app:argType="kr.snclab.haveeat.model.Diets"/>
+        <action
+            android:id="@+id/actionCameraGuideFragment"
+            app:destination="@id/CameraGuideFragment" />
+        <action
+            android:id="@+id/actionHistoryDetailFragment"
+            app:destination="@id/HistoryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CameraGuideFragment"
+        android:name="kr.snclab.haveeat.ui.camera.CameraGuideFragment"
+        android:label="CameraGuideFragment"
+        tools:layout="@layout/fragment_camera_guide">
+    </fragment>
+    <fragment
+        android:id="@+id/GalleryFragment"
+        android:name="kr.snclab.haveeat.ui.gallery.GalleryFragment"
+        android:label="GalleryFragment"
+        tools:layout="@layout/fragment_gallery"/>
+</navigation>

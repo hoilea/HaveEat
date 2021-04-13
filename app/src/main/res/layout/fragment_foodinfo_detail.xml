@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_layout_padding">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/view_foodInfoDetail_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/close"
+                app:srcCompat="@drawable/x_btn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_foodInfoDetail_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:textColor="#108b72"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="육류 - 돼지고기" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_foodInfoDetail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/text_black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_type"
+                tools:text="돼지갈비(구운것)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_foodInfoDetail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:textColor="#737373"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_name"
+                tools:text="육질이 잘 형성된 삼겹살은 살코기와 비계가 번갈아 겹겹이
+                                붙어 있어 고기가 부드럽고 고소하다. 삼겹살은 살과 지방
+                                부분이 세 겹으로 겹쳐 있다고 해서 붙은 이름이다.
+                                
+                                삼겹살은 돼지의 배 부분으로 우리나라 사람들이 제일 좋아
+                                하는 돼지고기 부위다. 전 세계 삼겹살을 한국인이 다 먹는
+                                다는 이야기가 있을 정도다. 당연히 돼지고기 부위 중 삼겹
+                                살이 가장 비싼 곳도 우리나라다." />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_foodInfoDetail_infoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_description"
+                android:text="@string/foodInfoDetail_infoTitle"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/text_black"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_foodInfoDetail_gramType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_foodInfoDetail_infoTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="1인분, 100g" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view_foodInfoDetail_valueLayout"
+                android:layout_width="match_parent"
+                android:layout_height="182dp"
+                android:background="@drawable/bg_rect_gray_10radius"
+                android:padding="@dimen/default_layout_padding"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_infoTitle">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/view_foodInfoDetail_value_titleLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/carbohydrate" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/protein" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/fat" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/sugar" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/view_foodInfoDetail_value_valueLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_foodInfoDetail_value_carbohydrateValue"
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        tools:text="112312.18g" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_foodInfoDetail_value_proteinValue"
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        tools:text="1.18g" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_foodInfoDetail_value_fatValue"
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        tools:text="1.18g" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_foodInfoDetail_value_sugarValue"
+                        style="@style/IntakeValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        tools:text="1.18g" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/view_foodInfoDetail_value_valueLayout"
+                    app:layout_constraintStart_toEndOf="@+id/view_foodInfoDetail_value_titleLayout"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_intake_value_dash"
+                        android:layerType="software" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_intake_value_dash"
+                        android:layerType="software" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_intake_value_dash"
+                        android:layerType="software" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_intake_value_dash"
+                        android:layerType="software" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view_foodInfoDetail_calLayout"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_rect_gray_10radius"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_valueLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_layout_padding"
+                    android:text="@string/cal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_foodInfoDetail_calType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_layout_padding"
+                    android:layout_marginBottom="5dp"
+                    android:text="kcal"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_foodInfoDetail_calValue"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_foodInfoDetail_calValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/view_foodInfoDetail_calType"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="661" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_foodInfoDetail_imageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_calLayout"
+                android:text="@string/foodInfoDetail_imageTitle"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/text_black"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/view_foodInfoDetail_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/des_food_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_imageTitle"/>
+
+            <ListView
+                android:id="@+id/view_foodInfoDetail_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:divider="@color/transparent"
+                android:dividerHeight="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_foodInfoDetail_image"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

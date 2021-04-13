@@ -1,0 +1,18 @@
+<vector android:alpha="0.85" android:height="600dp"
+    android:viewportHeight="600" android:viewportWidth="440"
+    android:width="440dp" xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:name="barGroup">
+        <path android:fillColor="#01BA76" android:pathData="M0,95h440v5h-440z"/>
+        <path android:pathData="M0,0h440v95h-440z">
+            <aapt:attr name="android:fillColor">
+                <gradient android:endX="220" android:endY="95"
+                    android:startX="220" android:startY="0" android:type="linear">
+                    <item android:color="#0001BA76" android:offset="0.411458"/>
+                    <item android:color="#D301BA76" android:offset="0.9996"/>
+                    <item android:color="#FF01BA76" android:offset="0.9997"/>
+                    <item android:color="#6D01BA76" android:offset="0.9998"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group >
+</vector>

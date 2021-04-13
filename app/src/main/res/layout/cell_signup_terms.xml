@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="kr.snclab.haveeat.ui.signup.SignupViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_layout_padding">
+
+        <TextView
+            android:id="@+id/view_signup_terms_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/signup_terms_message"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/view_signup_terms_checkAll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={vm.termsAll}"
+            android:onClick="@{() -> vm.toggleAll()}"
+            android:text="@string/signup_terms_all"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_signup_terms_message" />
+
+        <View
+            android:id="@+id/view_signup_terms_line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="#333333"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@+id/view_signup_terms_checkAll" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_signup_terms_show1"
+            android:layout_width="64dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="27dp"
+            android:background="@drawable/shape_small_roundrect"
+            android:text="@string/signup_terms_show"
+            android:textSize="12sp"
+            android:textColor="#898989"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_signup_terms_line" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/view_signup_terms_check1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={vm.terms1}"
+            android:text="@string/signup_terms_1_check"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/view_signup_terms_show1"
+            app:layout_constraintEnd_toStartOf="@+id/view_signup_terms_show1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_signup_terms_show1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_signup_terms_show2"
+            android:layout_width="64dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/shape_small_roundrect"
+            android:text="@string/signup_terms_show"
+            android:textSize="12sp"
+            android:textColor="#898989"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_signup_terms_show1" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/view_signup_terms_check2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={vm.terms2}"
+            android:text="@string/signup_terms_2_check"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/view_signup_terms_show2"
+            app:layout_constraintEnd_toStartOf="@+id/view_signup_terms_show2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_signup_terms_show2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/view_signup_terms_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/next"
+            style="@style/Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="65dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0.5dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shape_roundrect"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_historyPartList_title"
+                    android:layout_width="62dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="#333333"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text="아침" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="18dp"
+                    android:background="#d7d7d7" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/view_historyPartList_oval"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/shape_history_item_oval"
+                    android:scaleType="center"
+                    android:contentDescription="@string/add"
+                    app:srcCompat="@drawable/shape_history_item" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_historyPartList_cal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="600" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_historyPartList_calType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7.5dp"
+                    android:text="kcal"
+                    android:textColor="#737373"
+                    android:textSize="13sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/view_historyPartList_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/main_history_part_empty"
+                    android:textColor="#646464"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_historyPartList_message"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="12sp"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/view_historyPartList_detail"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="오전 9시 45분" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/view_historyPartList_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/des_detail"
+                        app:srcCompat="@drawable/ic_keyboard_arrow_right_24" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

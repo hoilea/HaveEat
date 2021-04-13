@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ededed"
+            android:paddingBottom="75dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="283dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_history_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23.5dp"
+                android:layout_marginTop="33.5dp"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12월" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/view_history_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:paddingBottom="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_history_title"
+                app:layout_constraintStart_toEndOf="@+id/view_history_title"
+                android:contentDescription="@string/des_calendar"
+                app:srcCompat="@drawable/history_calendar" />
+
+            <kr.snclab.haveeat.ui.main.history.HistoryDayRecyclerView
+                android:id="@+id/view_history_dayPager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/history_day_item_height"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_title"
+                tools:listitem="@layout/cell_history_day" />
+
+            <View
+                android:layout_width="42dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/view_history_dayPager"
+                app:layout_constraintBottom_toBottomOf="@+id/view_history_dayPager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/bg_day_left_shadow"/>
+
+            <View
+                android:layout_width="42dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/view_history_dayPager"
+                app:layout_constraintBottom_toBottomOf="@+id/view_history_dayPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/bg_day_right_shadow"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/view_history_totalLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="22.5dp"
+                app:cardElevation="0.5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_dayPager">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/view_history_progress_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="12dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:text="@string/history_total"
+                        android:textColor="#333333"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_progress_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="46sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/view_history_progress_max"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_total"
+                        tools:text="1,231" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_progress_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="kcal"
+                        android:textColor="#737373"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_history_progress_value"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/view_history_progress_value"
+                        tools:text="kcal" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_guest_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_progress_max"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/history_guest_message"
+                        android:visibility="gone"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/view_history_guest_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_guest_message"
+                        android:layout_marginTop="25dp"
+                        android:paddingStart="38dp"
+                        android:paddingEnd="38dp"
+                        style="@style/Button"
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/history_signin_logo"
+                        android:drawablePadding="5dp"
+                        android:text="@string/history_guest_signin"
+                        android:visibility="gone"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/view_history_total_messageLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="23dp"
+                        android:background="@drawable/shape_history_total"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_progress_max">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_history_total_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="5dp"
+                            android:drawableStart="@drawable/main_info"
+                            tools:text="@string/history_total_message" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:id="@+id/view_history_total_bar"
+                        android:layout_width="0.5dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="17dp"
+                        android:background="#d7d7d7"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_total_messageLayout" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_total_cal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/history_cal"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/view_history_total_bar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_total_messageLayout" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_total_sugar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/history_sugar"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/view_history_total_bar"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_total_messageLayout" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_total_calVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4.5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/view_history_total_bar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_total_cal"
+                        tools:text="77%" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_history_total_sugarVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4.5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/view_history_total_bar"
+                        app:layout_constraintTop_toBottomOf="@+id/view_history_total_sugar"
+                        tools:text="110%" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <kr.snclab.haveeat.ui.main.history.HistoryDietsView
+                android:id="@+id/view_history_part_morning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_totalLayout" />
+
+            <kr.snclab.haveeat.ui.main.history.HistoryDietsView
+                android:id="@+id/view_history_part_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_part_morning" />
+
+            <kr.snclab.haveeat.ui.main.history.HistoryDietsView
+                android:id="@+id/view_history_part_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_part_lunch" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/view_history_part_snackList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_part_dinner" />
+
+            <kr.snclab.haveeat.ui.main.history.HistoryDietsView
+                android:id="@+id/view_history_part_snack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_goneMarginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_history_part_snackList" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

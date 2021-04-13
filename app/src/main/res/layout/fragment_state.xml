@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ededed"
+            android:gravity="center_horizontal"
+
+            android:paddingBottom="@dimen/default_layout_padding"
+            android:orientation="vertical">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="73dp"
+                android:text="@string/state_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_black"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:paddingBottom="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/title"
+                app:layout_constraintStart_toEndOf="@+id/title"
+                android:contentDescription="@string/des_calendar"
+                app:srcCompat="@drawable/ic_calendar_black" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/guestLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="53dp"
+                android:layout_marginStart="@dimen/default_layout_padding"
+                android:layout_marginEnd="@dimen/default_layout_padding"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:cardCornerRadius="22.5dp"
+                app:cardElevation="2dp"
+                android:visibility="gone">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/history_guest_message"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/guestLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:paddingStart="38dp"
+                        android:paddingEnd="38dp"
+                        style="@style/Button"
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/history_signin_logo"
+                        android:drawablePadding="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/history_guest_signin"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="53dp"
+                android:layout_marginStart="@dimen/default_layout_padding"
+                android:layout_marginEnd="@dimen/default_layout_padding"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:cardCornerRadius="22.5dp"
+                app:cardElevation="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_layout_padding">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/left"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:contentDescription="@string/des_prev_month"
+                            app:srcCompat="@drawable/ic_left" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/right"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:scaleType="center"
+                            android:contentDescription="@string/des_next_month"
+                            app:srcCompat="@drawable/ic_right" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:textColor="@color/text_black"
+                        android:textSize="22.5sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="12월 18일"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_cal_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/left"
+                        android:layout_marginTop="29dp"
+                        android:text="@string/state_cal_title"
+                        android:textStyle="bold"
+                        android:textSize="20.3sp"
+                        android:textColor="@color/black"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_cal_color2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/left"
+                        android:layout_marginTop="29dp"
+                        android:text="@string/state_cal_color2"
+                        android:textSize="11sp"
+                        android:textColor="#737373"/>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_oval_pink"
+                        app:layout_constraintEnd_toStartOf="@+id/state_cal_color2"
+                        app:layout_constraintBottom_toBottomOf="@+id/state_cal_color2"
+                        app:layout_constraintTop_toTopOf="@+id/state_cal_color2"
+                        android:layout_marginEnd="4dp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_cal_color1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/state_cal_color2"
+                        app:layout_constraintTop_toBottomOf="@+id/left"
+                        android:layout_marginTop="29dp"
+                        android:layout_marginEnd="29dp"
+                        android:text="@string/state_cal_color1"
+                        android:textSize="11sp"
+                        android:textColor="#737373"/>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_oval_primary"
+                        app:layout_constraintEnd_toStartOf="@+id/state_cal_color1"
+                        app:layout_constraintBottom_toBottomOf="@+id/state_cal_color1"
+                        app:layout_constraintTop_toTopOf="@+id/state_cal_color1"
+                        android:layout_marginEnd="4dp"/>
+
+                    <kr.snclab.haveeat.ui.state.ChartView
+                        android:id="@+id/state_cal_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="182dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/state_cal_title"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_diets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/state_cal_chart"
+                        android:layout_marginTop="35dp"
+                        android:text="@string/state_diets"
+                        android:textStyle="bold"
+                        android:textSize="20.3sp"
+                        android:textColor="@color/black"
+                        />
+
+                    <kr.snclab.haveeat.ui.state.ChartView
+                        android:id="@+id/state_diets_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="182dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/state_diets"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_tsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/state_diets_chart"
+                        android:layout_marginTop="35dp"
+                        android:text="@string/state_tsg"
+                        android:textStyle="bold"
+                        android:textSize="20.3sp"
+                        android:textColor="@color/black"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_tsg_color2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/state_tsg"
+                        android:layout_marginTop="29dp"
+                        android:text="@string/state_tsg_color2"
+                        android:textSize="11sp"
+                        android:textColor="#737373"/>
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_oval_yallow"
+                        app:layout_constraintEnd_toStartOf="@+id/state_tsg_color2"
+                        app:layout_constraintBottom_toBottomOf="@+id/state_tsg_color2"
+                        app:layout_constraintTop_toTopOf="@+id/state_tsg_color2"
+                        android:layout_marginEnd="4dp"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/state_tsg_color1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/state_tsg_color2"
+                        app:layout_constraintBottom_toBottomOf="@+id/state_tsg"
+                        android:layout_marginTop="29dp"
+                        android:layout_marginEnd="29dp"
+                        android:text="@string/state_tsg_color1"
+                        android:textSize="11sp"
+                        android:textColor="#737373"/>
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bg_oval_primary"
+                        app:layout_constraintEnd_toStartOf="@+id/state_tsg_color1"
+                        app:layout_constraintBottom_toBottomOf="@+id/state_tsg_color1"
+                        app:layout_constraintTop_toTopOf="@+id/state_tsg_color1"
+                        android:layout_marginEnd="4dp"/>
+                    <kr.snclab.haveeat.ui.state.ChartView
+                        android:id="@+id/state_tsg_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="142dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/state_tsg"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/state_tsg_chart"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:contentDescription="@string/des_state"
+                        app:srcCompat="@drawable/state_description"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

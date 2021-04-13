@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "69719618628",
+    "project_id": "haveeat-app",
+    "storage_bucket": "haveeat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69719618628:android:e437178281615244797811",
+        "android_client_info": {
+          "package_name": "kr.snclab.haveeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69719618628-p8ujt9hd9viddeml9858vj3b7tas704p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBey0fJ_HIaf7f2LV3ByykMJtrVj4APLPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69719618628-p8ujt9hd9viddeml9858vj3b7tas704p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
