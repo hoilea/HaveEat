@@ -42,7 +42,7 @@
                 android:layout_width="@dimen/main_bottom_nav_bar_width"
                 android:layout_height="2dp"
                 android:layout_gravity="top"
-                android:background="@color/colorPrimary" />
+                android:background="@color/colorgreen" />
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
