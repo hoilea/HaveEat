@@ -26,18 +26,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="53dp"
                 android:text="@string/addInfo_title"
-                android:textSize="34sp"
+                android:textSize="36sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/view_addInfo_sex_layout"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/view_addInfo_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="33dp"
+                android:layout_marginTop="102dp"
                 android:text="@string/addInfo_message"
-                android:textSize="20sp"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:paddingStart="60dp"
+                android:paddingEnd="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view_addInfo_title" />
@@ -45,9 +48,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/view_addInfo_sex_layout"
                 style="@style/DropdownLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="43dp"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="49dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view_addInfo_message">
@@ -63,8 +66,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/view_addInfo_year_layout"
                 style="@style/EditTextLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,11 +85,20 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_addInfo_year_layout"
+                app:layout_constraintEnd_toEndOf="@+id/view_addInfo_year_layout"
+                app:layout_constraintTop_toTopOf="@+id/view_addInfo_year_layout" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/view_addInfo_height_layout"
                 style="@style/EditTextLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="13dp"
                 android:hint="@string/addInfo_height"
                 android:maxLength="3"
@@ -105,11 +117,20 @@
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="15dp"
+                android:text="cm"
+                app:layout_constraintBottom_toBottomOf="@+id/view_addInfo_height_layout"
+                app:layout_constraintEnd_toEndOf="@+id/view_addInfo_height_layout"
+                app:layout_constraintTop_toTopOf="@+id/view_addInfo_height_layout" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/view_addInfo_weight_layout"
                 style="@style/EditTextLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -129,8 +150,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/view_addInfo_activity_layout"
                 style="@style/DropdownLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -143,6 +164,15 @@
                     android:text="@={vm.activity}"
                     android:hint="@string/addInfo_activity" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg"
+                android:paddingEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_addInfo_weight_layout"
+                app:layout_constraintEnd_toEndOf="@+id/view_addInfo_weight_layout"
+                app:layout_constraintTop_toTopOf="@+id/view_addInfo_weight_layout" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/view_addInfo_next"

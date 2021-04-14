@@ -7,39 +7,40 @@
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_dialog"
-        android:paddingTop="46dp"
-        android:paddingBottom="35dp">
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#333333"
-            android:textSize="20sp"
+            android:textColor="#949393"
+            android:gravity="center"
+            android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="회원 정보를 찾을 수 없습니다" />
+            tools:text="이메일 또는 비밀번호가 \n맞지 않습니다." />
 
         <TextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="22dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="#949393"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title"
-            tools:text="이메일 주소를 정확하게 입력하였는지 \n다시 한 번 확인해주세요." />
+            tools:text="입력하신 정보를 다시 한번 확인해주세요." />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cancelButton"
             android:layout_width="126dp"
             android:layout_height="48dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="58dp"
             android:background="@drawable/bg_button_white"
             android:text="@string/cancel"
             android:textColor="@color/colorPrimary"
@@ -54,13 +55,14 @@
             android:id="@+id/button"
             android:layout_width="126dp"
             android:layout_height="48dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="58dp"
             android:background="@drawable/bg_button"
+            android:stateListAnimator="@null"
             android:text="@string/confirm"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:stateListAnimator="@null"
-            android:layout_marginStart="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cancelButton"
             app:layout_constraintTop_toBottomOf="@+id/message"

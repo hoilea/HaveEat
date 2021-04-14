@@ -121,8 +121,8 @@
     <string name="password_find_result">메일 발송이 완료되었습니다.\n임시 비밀번호로 로그인 한 후에 \'내 정보\'에서\n반드시 새로운 비밀번호로 변경해주세요.</string>
     <string name="password_find_result_done">로그인하러 가기</string>
 
-    <string name="addInfo_title">반가워요.</string>
-    <string name="addInfo_message">푸드닥터가 foodDoctor 님에게 가장 적절한 식사 습관을 분석하여 추천할 수 있도록 다음 정보를 알려주세요.</string>
+    <string name="addInfo_title">반가워요!</string>
+    <string name="addInfo_message">푸드닥터가 foodDoctor 님에게 \n가장 적절한 식사 습관을 분석하여 추천할 수 있도록 \n다음 정보를 입력해 주세요.</string>
     <string name="addInfo_sex">성별</string>
     <string name="addInfo_man">남성</string>
     <string name="addInfo_woman">여성</string>
