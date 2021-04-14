@@ -27,6 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="18sp"
                 android:text="@string/signup_check_message"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,29 +40,32 @@
                 style="@style/EditTextLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="64dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view_signup_check_message">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/view_signup_check_email"
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:imeOptions="actionDone"
                     android:inputType="number"
                     android:singleLine="true"
                     android:hint="@string/signup_check_number"
-                    android:text="@={vm.checkNumber}" />
+                    android:text="@={vm.checkNumber}"
+                    android:gravity="center"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/view_signup_check_button"
                 style="@style/Button"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="30dp"
                 android:text="@string/signup_check_confirm"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

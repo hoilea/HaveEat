@@ -100,9 +100,9 @@
     <string name="signup_info_passwordre_error">비밀번호가 동일하지 않습니다.</string>
 
     <string name="signup_check_title">인증</string>
-    <string name="signup_check_message">입력하신 이메일 주소로 인증번호를 발송 하였습니다.\n아래에 인증번호를 입력해주세요.</string>
+    <string name="signup_check_message">이메일로 전송된 인증번호를 확인하여\n입력해주세요.</string>
     <string name="signup_check_number">인증번호</string>
-    <string name="signup_check_confirm">확인 및 가입완료</string>
+    <string name="signup_check_confirm">가입완료</string>
 
     <string name="signup_complete_title">가입 완료</string>
     <string name="signup_complete_message1">가입이 완료되었습니다.</string>

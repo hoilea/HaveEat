@@ -37,7 +37,7 @@
                 <View
                     android:layout_width="1dp"
                     android:layout_height="18dp"
-                    android:background="#d7d7d7" />
+                    android:background="#d4d2d2" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/view_historyPartList_oval"
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:text="600" />

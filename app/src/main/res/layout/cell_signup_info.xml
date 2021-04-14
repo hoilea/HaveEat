@@ -29,9 +29,13 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/signup_info_message1"
                 android:textSize="18sp"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="40.5dp"
+                android:layout_marginEnd="40.5dp"
+                />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -46,8 +50,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/view_signup_info_email"
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:hint="@string/signup_info_email"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
@@ -59,7 +65,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/view_signup_info_password_layout"
                 style="@style/EditTextLayout"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +76,8 @@
                     android:id="@+id/view_signup_info_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:hint="@string/signup_info_password"
                     android:imeOptions="actionNext"
                     android:inputType="textPassword"
@@ -86,7 +94,10 @@
                 android:text="@string/signup_info_password_message"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_signup_info_password_layout" />
+                app:layout_constraintTop_toBottomOf="@id/view_signup_info_password_layout"
+                android:layout_marginStart="40.5dp"
+                android:layout_marginEnd="40.5dp"
+                />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -101,9 +112,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/view_signup_info_passwordre"
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/signup_info_password_re"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:singleLine="true"
@@ -115,7 +128,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/view_signup_info_button"
                 style="@style/Button"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="18dp"
                 android:layout_marginBottom="6dp"

@@ -10,6 +10,7 @@
     <color name="gray">#a1a1a1</color>
     <color name="transparent">#00000000</color>
     <color name="gray_text">#949393</color>
+    <color name="gray_recode">#d4d2d2</color>
 
     <color name="text_black">#333333</color>
     <color name="whiteblue">#e7f5f1</color>
