@@ -40,7 +40,7 @@
     <string name="splash_tour">서비스 둘러보기</string>
 
     <string name="signin_login">로그인</string>
-    <string name="signin_message">이메일 주소와 비밀번호를 입력하여\n해브잇 서비스에 로그인하세요.</string>
+    <string name="signin_message">이메일 주소와 비밀번호를 입력하여\n푸드닥터 서비스에 로그인하세요.</string>
     <string name="signin_email">이메일 주소</string>
     <string name="signin_password">비밀번호</string>
     <string name="signin_auto">자동 로그인</string>
@@ -106,7 +106,7 @@
 
     <string name="signup_complete_title">가입 완료</string>
     <string name="signup_complete_message1">가입이 완료되었습니다.</string>
-    <string name="signup_complete_message2">부가 정보를 입력하시면 푸디잇이 분석하여 하루 적정 식사량을 추천해 드려요.</string>
+    <string name="signup_complete_message2">부가 정보를 입력하시면 푸드닥터가 분석하여 하루 적정 식사량을 추천해 드려요.</string>
     <string name="signup_complete_more_input">부가 정보 입력</string>
     <string name="signup_complete_or">또한</string>
     <string name="signup_complete_next">다음에 할게요.</string>

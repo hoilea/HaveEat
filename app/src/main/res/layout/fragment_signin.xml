@@ -21,14 +21,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/close"
-            app:srcCompat="@drawable/x_btn" />
+            app:srcCompat="@drawable/x_btn"
+            android:visibility="gone"/>
 
 
         <ImageView
             android:id="@+id/view_signin_title"
             android:layout_width="301.9dp"
             android:layout_height="32.7dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="120dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -111,7 +112,7 @@
             android:id="@+id/view_signin_auto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="14dp"
             android:buttonTint="@color/colorgreen"
             android:checked="true"
             android:text="@string/signin_auto"
@@ -127,7 +128,7 @@
             style="@style/Button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="75dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/signin_login"
             app:layout_constraintBottom_toTopOf="@+id/view_signin_social"
             app:layout_constraintEnd_toEndOf="parent"
